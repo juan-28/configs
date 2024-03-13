@@ -5,6 +5,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
+
 # If you come from bash you might have to change your $PATH.
 # export PATH="$PATH:/Users/pranavsukumaran/opt/anaconda3/bin" 
 
@@ -78,7 +80,7 @@ ZSH_CUSTOM=$ZSH/custom
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting web-search gcloud macos iterm2 tmux you-should-use)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting iterm2 tmux you-should-use)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -87,13 +89,13 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+   export EDITOR='nvim'
+else
+   export EDITOR='nvim'
+ fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -107,7 +109,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias zshconfig="nvim ~/.zshrc" 
-alias cht='~/.dotfiles/cht.sh'
 
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -129,15 +130,8 @@ alias cht='~/.dotfiles/cht.sh'
 # # <<< conda initialize <<<
 
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/pranavsukumaran/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/pranavsukumaran/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/pranavsukumaran/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/pranavsukumaran/google-cloud-sdk/completion.zsh.inc'; fi
-export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
 export PATH=$PATH:~/.local/bin
 export PATH="/usr/local/opt/openjdk@17/bin:$PATH"
-export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
 
 # git commands
 alias -g g=git
@@ -160,12 +154,11 @@ alias -g gp='git fetch -p'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 alias dotfiles='cd ~/Desktop/Personal_dev/.dotfiles'
 alias netflix='open https://mv-web.netlify.app'
-alias csv='csv.sh'
 alias ls='colorls'
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-alias spotify='/Users/pranavsukumaran/spotify-player/target/debug/spotify_player'
 eval "$(zoxide init zsh)"
 export PATH="/Users/pranavsukumaran/Desktop/Personal_dev/csv_viewer:$PATH"
 export PATH="/Users/pranavsukumaran/spotify-player/target/debug:$PATH"
 export PATH="$PATH:$(npm config get prefix)/bin"
-
+export PATH="$PATH:/opt/nvim-linux64/bin"
+export PATH="/usr/bin/python3:$PATH"
