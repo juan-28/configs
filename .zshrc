@@ -152,8 +152,7 @@ alias -g grv='git remote -v'
 alias -g gp='git fetch -p'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-alias dotfiles='cd ~/Desktop/Personal_dev/.dotfiles'
-alias netflix='open https://mv-web.netlify.app'
+alias dot='cd ~/configs/'
 alias ls='colorls'
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 eval "$(zoxide init zsh)"
