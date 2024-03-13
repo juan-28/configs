@@ -128,6 +128,9 @@ alias cht='~/.dotfiles/cht.sh'
 # unset __conda_setup
 # # <<< conda initialize <<<
 
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/pranavsukumaran/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/pranavsukumaran/google-cloud-sdk/path.zsh.inc'; fi
@@ -162,6 +165,7 @@ alias dotfiles='cd ~/Desktop/Personal_dev/.dotfiles'
 alias netflix='open https://mv-web.netlify.app'
 alias csv='csv.sh'
 alias ls='colorls'
+alias tmux='tmux -u'
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 alias spotify='/Users/pranavsukumaran/spotify-player/target/debug/spotify_player'
 eval "$(zoxide init zsh)"
