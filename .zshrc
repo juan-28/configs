@@ -166,6 +166,7 @@ alias netflix='open https://mv-web.netlify.app'
 alias csv='csv.sh'
 alias ls='colorls'
 alias tmux='tmux -u'
+alias nvim-kickstart='NVIM_APPNAME="nvim-kickstart" nvim'
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 alias spotify='/Users/pranavsukumaran/spotify-player/target/debug/spotify_player'
 eval "$(zoxide init zsh)"
